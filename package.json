@@ -1,0 +1,14 @@
+{
+  "name": "slack-bot",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/Shuunen/slack-bot",
+  "author": "Romain Racamier-Lafon <romain.racamier@gmail.com>",
+  "license": "AGPL",
+  "scripts": {
+    "start": "nodemon"
+  },
+  "dependencies": {
+    "botkit": "^0.5.4"
+  }
+}
