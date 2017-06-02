@@ -42,6 +42,8 @@ const firstCap = (str) => str.charAt(0).toUpperCase() + str.slice(1)
 const endPunctuation = (withFun) => pick(withFun ? [' :)', ' :D'] : ['.', '.', '', '...'])
 const greetings = ['salut ', 'hello ', 'hey ']
 const greeting = () => pick(greetings)
+const feelingsGood = ['ça roule', 'ça va', 'nickel', 'comme un vendredi']
+const feelingGood = () => pick(feelingsGood)
 /*
   Interactions
 */
@@ -55,7 +57,7 @@ const welcome = (who) => say(greeting() + who, true)
   Hello
 */
 bot.hears('ça va', ['ambient'], (bot, message) => {
-  bot.reply(message, 'Nickel et toi ?')
+  bot.reply(message, say(feelingGood() + ' et toi ?'))
 })
 /*
   Time
@@ -63,7 +65,7 @@ bot.hears('ça va', ['ambient'], (bot, message) => {
 bot.hears('quelle heure', ['ambient'], (bot, message) => {
   let date = new Date()
   let time = date.getHours() + ':' + date.getMinutes()
-  bot.reply(message, 'il est ' + time)
+  bot.reply(message, say('il est ' + time))
 })
 /*
   Weather
@@ -76,7 +78,7 @@ bot.hears('quel temps', ['ambient'], (bot, message) => {
   let forecast = today ? forecasts.fcst_day_0 : forecasts.fcst_day_1
   let response = today ? 'aujourd\'hui ' : 'demain '
   response += 'il fera entre ' + forecast.tmin + '° et ' + forecast.tmax + '°'
-  bot.reply(message, response)
+  bot.reply(message, say(response))
 })
 /*
   Welcome 
