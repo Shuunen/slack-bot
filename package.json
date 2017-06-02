@@ -10,6 +10,9 @@
   },
   "dependencies": {
     "botkit": "^0.5.4",
-    "node-fetch": "^1.7.0"
+    "chance": "^1.0.9",
+    "node-fetch": "^1.7.0",
+    "shuffle-array": "^1.0.1",
+    "underscore": "^1.8.3"
   }
 }
