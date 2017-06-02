@@ -36,22 +36,37 @@ bot.spawn({ token: token }).startRTM()
 */
 const pick = (arr) => shuffle(arr)[0]
 const firstCap = (str) => str.charAt(0).toUpperCase() + str.slice(1)
+const withFun = true
 /* 
   Vocabulary
 */
 const endPunctuation = (withFun) => pick(withFun ? [' :)', ' :D'] : ['.', '.', '', '...'])
 const greetings = ['salut ', 'hello ', 'hey ']
 const greeting = () => pick(greetings)
-const feelingsGood = ['ça roule', 'ça va', 'nickel', 'comme un vendredi']
+const feelingsGood = ['ça roule ', 'ça va ', 'nickel ', 'comme un vendredi ']
 const feelingGood = () => pick(feelingsGood)
+const deNadas = ['mais de rien ', 'de rien ', 'c\'est moi ']
+const thanks = ['merci']
 /*
   Interactions
 */
 const say = (str, withFun) => firstCap(str + endPunctuation(withFun))
-const welcome = (who) => say(greeting() + who, true)
+const welcome = (userId) => say(greeting() + name(userId), withFun)
+const deNada = (userId) => say(pick(deNadas) + name(userId), withFun)
 /*
   Brain
 */
+const names = {
+  'U0760C9CL': 'Romain', // me
+  'U21PGPWE9': 'Romain',
+  'U0YBJJB0B': 'Léo',
+  'U0AMSTYCB': 'Bertrand',
+  'U23HBPVB2': 'Floris',
+  'U1Y7HMH1Q': 'Pauline',
+  'U0EQPACE6': 'Florian',
+  'U0YCZU9MY': 'Benjamin'
+}
+const name = (id) => (names[id] || '')
 
 /* ___  __        __       ___    __       
   |__  |  \ |  | /  `  /\   |  | /  \ |\ | 
@@ -63,7 +78,7 @@ bot.hears('ça va', ['ambient'], (bot, message) => {
   if (message.text.indexOf('?') === -1) {
     return
   }
-  bot.reply(message, say(feelingGood() + ' et toi ?'))
+  bot.reply(message, say(feelingGood() + 'et toi ?'))
 })
 /*
   Time
@@ -98,5 +113,12 @@ bot.hears('quel temps', ['ambient'], (bot, message) => {
 bot.hears(greetings, ['mention', 'direct_mention'], (bot, message) => {
   // console.log('got message', message)
   bot.reply(message, welcome(message.user))
+})
+/*
+  Polite
+*/
+bot.hears(thanks, ['ambient'], (bot, message) => {
+  // console.log('got message', message)
+  bot.reply(message, deNada(message.user))
 })
 
