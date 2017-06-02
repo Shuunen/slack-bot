@@ -49,6 +49,9 @@ const feelingGood = () => pick(feelingsGood)
 */
 const say = (str, withFun) => firstCap(str + endPunctuation(withFun))
 const welcome = (who) => say(greeting() + who, true)
+/*
+  Brain
+*/
 
 /* ___  __        __       ___    __       
   |__  |  \ |  | /  `  /\   |  | /  \ |\ | 
@@ -57,12 +60,18 @@ const welcome = (who) => say(greeting() + who, true)
   Hello
 */
 bot.hears('ça va', ['ambient'], (bot, message) => {
+  if (message.text.indexOf('?') === -1) {
+    return
+  }
   bot.reply(message, say(feelingGood() + ' et toi ?'))
 })
 /*
   Time
 */
 bot.hears('quelle heure', ['ambient'], (bot, message) => {
+  if (message.text.indexOf('?') === -1) {
+    return
+  }
   let date = new Date()
   let time = date.getHours() + ':' + date.getMinutes()
   bot.reply(message, say('il est ' + time))
@@ -73,6 +82,9 @@ bot.hears('quelle heure', ['ambient'], (bot, message) => {
 let forecasts = {}
 fetch('http://www.prevision-meteo.ch/services/json/nantes').then(res => res.json()).then(json => forecasts = json)
 bot.hears('quel temps', ['ambient'], (bot, message) => {
+  if (message.text.indexOf('?') === -1) {
+    return
+  }
   console.log('complete message was : ', message.text)
   let today = (message.text.indexOf('demain') === -1)
   let forecast = today ? forecasts.fcst_day_0 : forecasts.fcst_day_1
