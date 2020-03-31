@@ -1,18 +1,34 @@
 {
-  "name": "slack-bot",
-  "version": "1.0.0",
-  "main": "index.js",
-  "repository": "https://github.com/Shuunen/slack-bot",
   "author": "Romain Racamier-Lafon <romain.racamier@gmail.com>",
-  "license": "AGPL",
-  "scripts": {
-    "start": "nodemon"
-  },
+  "bugs": "https://github.com/Shuunen/what-now/issues",
   "dependencies": {
-    "botkit": "^0.5.4",
-    "chance": "^1.0.9",
-    "node-fetch": "^1.7.0",
-    "shuffle-array": "^1.0.1",
-    "underscore": "^1.8.3"
-  }
+    "botkit": "4.8.1",
+    "node-fetch": "2.6.0",
+    "shuffle-array": "1.0.1"
+  },
+  "description": "Annoying bot for Slack",
+  "files": [
+    "src"
+  ],
+  "homepage": "https://github.com/Shuunen/what-now",
+  "keywords": [
+    "slack",
+    "bot"
+  ],
+  "license": "GPL-3.0",
+  "main": "index.js",
+  "name": "@shuunen/slack-bot",
+  "private": true,
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Shuunen/what-now.git"
+  },
+  "scripts": {
+    "check": "npx repo-check",
+    "ci": "npm run test",
+    "test": "npm run check",
+    "start": "nodemon",
+    "update": "npx npm-check-updates -u"
+  },
+  "version": "1.0.0"
 }

@@ -9,9 +9,9 @@
 
 // basic mods
 const fetch = require('node-fetch')
-const _ = require('underscore');
-const Chance = require('chance');
-const chance = new Chance();
+// const _ = require('underscore');
+// const Chance = require('chance');
+// const chance = new Chance();
 const shuffle = require('shuffle-array');
 
 // get secret token
