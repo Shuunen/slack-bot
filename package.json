@@ -1,6 +1,6 @@
 {
   "author": "Romain Racamier-Lafon <romain.racamier@gmail.com>",
-  "bugs": "https://github.com/Shuunen/what-now/issues",
+  "bugs": "https://github.com/Shuunen/slack-bot/issues",
   "dependencies": {
     "botkit": "4.8.1",
     "node-fetch": "2.6.0",
@@ -10,7 +10,7 @@
   "files": [
     "src"
   ],
-  "homepage": "https://github.com/Shuunen/what-now",
+  "homepage": "https://github.com/Shuunen/slack-bot",
   "keywords": [
     "slack",
     "bot"
@@ -21,7 +21,7 @@
   "private": true,
   "repository": {
     "type": "git",
-    "url": "https://github.com/Shuunen/what-now.git"
+    "url": "https://github.com/Shuunen/slack-bot.git"
   },
   "scripts": {
     "check": "npx repo-check",
