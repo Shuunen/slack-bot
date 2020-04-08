@@ -4,6 +4,7 @@
   "dependencies": {
     "botkit": "4.8.1",
     "node-fetch": "2.6.0",
+    "repo-check": "1.5.0",
     "shuffle-array": "1.0.1"
   },
   "description": "Annoying bot for Slack",
@@ -24,10 +25,12 @@
     "url": "https://github.com/Shuunen/slack-bot.git"
   },
   "scripts": {
-    "check": "npx repo-check",
+    "check": "repo-check",
     "ci": "npm run test",
-    "test": "npm run check",
+    "postversion": "git push && git push --tags",
+    "preversion": "npm run ci",
     "start": "nodemon",
+    "test": "npm run check",
     "update": "npx npm-check-updates -u"
   },
   "version": "1.0.0"
