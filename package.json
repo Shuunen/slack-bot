@@ -2,7 +2,7 @@
   "author": "Romain Racamier-Lafon <romain.racamier@gmail.com>",
   "bugs": "https://github.com/Shuunen/slack-bot/issues",
   "dependencies": {
-    "botkit": "4.8.1",
+    "botkit": "4.9.0",
     "node-fetch": "2.6.0",
     "repo-check": "1.10.0",
     "shuffle-array": "1.0.1"
