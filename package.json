@@ -3,7 +3,7 @@
   "bugs": "https://github.com/Shuunen/slack-bot/issues",
   "dependencies": {
     "botkit": "4.9.0",
-    "node-fetch": "2.6.0",
+    "node-fetch": "2.6.1",
     "repo-check": "1.10.0",
     "shuffle-array": "1.0.1"
   },
